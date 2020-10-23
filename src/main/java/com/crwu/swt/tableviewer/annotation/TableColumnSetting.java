@@ -13,12 +13,22 @@ import java.lang.annotation.*;
 @Inherited
 public @interface TableColumnSetting {
 
+    /**
+     * 列的位置
+     * */
     int index();
-
+    /**
+     * 表头文本
+     * */
     String columnText();
 
+    /**
+     * 是否可编辑
+     * */
     boolean modify() default false;
-
+    /**
+     * 表头宽度
+     * */
     int width() default 100;
 
 

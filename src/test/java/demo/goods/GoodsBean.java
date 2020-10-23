@@ -1,11 +1,13 @@
 package demo.goods;
 
 import com.crwu.swt.tableviewer.annotation.TableColumnSetting;
+import lombok.Data;
 
 /**
  * @author cr.wu
  *
  */
+@Data
 public class GoodsBean {
 	
 
@@ -19,38 +21,7 @@ public class GoodsBean {
     private String stardard;
     @TableColumnSetting(index = 3,columnText = "类型",modify = true)
     private String category;
-	
-	
-	public int getGoodsId() {
-		return goodsId;
-	}
-	public void setGoodsId(int goodsId) {
-		this.goodsId = goodsId;
-	}
-	public String getGoodsName() {
-		return goodsName;
-	}
-	public void setGoodsName(String goodsName) {
-		this.goodsName = goodsName;
-	}
-	public String getStardard() {
-		return stardard;
-	}
-	public void setStardard(String stardard) {
-		this.stardard = stardard;
-	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
-	@Override
-	public String toString() {
-		return "GoodsBean [goodsId=" + goodsId + ", goodsName=" + goodsName + ", stardard=" + stardard  + ", category=" + category + "]";
-	}
-	
-	
+
 	
 }
 

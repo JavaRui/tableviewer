@@ -10,11 +10,14 @@ import java.util.List;
 
 /**
  * @author wuchengrui
- * @Description: \\TODO
+ * @Description: 通过属性注解，获取对象的属性值的反射类
  * @date 2020/9/23 11:14
  */
 public class TableColumnUtil {
 
+    /**
+     * 解析属性的中注解的index的属性，返回对应的值
+     * */
     public static Object parse(Object object , int index){
 
         Field field =  getField(object,index);
@@ -27,7 +30,9 @@ public class TableColumnUtil {
     }
 
 
-
+    /**
+     * 解析属性的中注解的columText的属性，返回对应的值
+     * */
     public static Object parse(Object object , String column){
 
         Field field = getField(object, column);
@@ -39,7 +44,9 @@ public class TableColumnUtil {
         }
         return null;
     }
-
+    /**
+     * 解析属性的中注解的index的属性，返回对应的对象属性
+     * */
     public static Field getField(Object object , String column){
 
         List<Field> fieldList = getFieldList(object, TableColumnSetting.class);
@@ -57,7 +64,9 @@ public class TableColumnUtil {
         return null;
 
     }
-
+    /**
+     * 解析属性的中注解的index的属性，返回对象属性
+     * */
     public static Field getField(Object object , int index){
 
         List<Field> fieldList = getFieldList(object, TableColumnSetting.class);
@@ -77,13 +86,17 @@ public class TableColumnUtil {
     }
 
 
-
+    /**
+     * 返回有annotionClz注解的属性列表
+     * */
     public static List<Field> getFieldList(Object object , Class annotionClz){
         return getFieldList(object.getClass(),annotionClz);
     }
 
 
-
+    /**
+     *返回有annotionClz注解的属性列表
+     * */
     public static List<Field> getFieldList(Class<?> clazz , Class annotionClz){
 
         List<Field> list = new LinkedList();
@@ -127,7 +140,9 @@ public class TableColumnUtil {
 
     }
 
-
+    /**
+     *返回TableColumnSetting注解
+     * */
     public static List<TableColumnSetting> getTableColumnSettingList(List<Field> list){
         List<TableColumnSetting> settings = new LinkedList<TableColumnSetting>();
         list.forEach(field -> {
@@ -138,7 +153,9 @@ public class TableColumnUtil {
         return settings;
 
     }
-
+    /**
+     *返回TableColumnSetting注解
+     * */
     public static List<TableColumnSetting> getTableColumnSettingList(Class<?> object){
         List<Field> fieldList = getFieldList(object, TableColumnSetting.class);
 

@@ -1,13 +1,14 @@
 package demo.order;
 
 import com.crwu.swt.tableviewer.annotation.TableColumnSetting;
+import lombok.Data;
 
 /**
  * @author cr.wu
  *
  * 2015-8-2
  */
-
+@Data
 public class InOrderDesc {
 
     @TableColumnSetting(index = 0,columnText = "这是商品")
@@ -18,36 +19,7 @@ public class InOrderDesc {
 	private String supName;
     @TableColumnSetting(index = 3,columnText = "总金额")
 	private float allMoney = 0.00f;
-	
-	public int getInOrderId() {
-		return inOrderId;
-	}
-	public void setInOrderId(int inOrderId) {
-		this.inOrderId = inOrderId;
-	}
-	public String getNo() {
-		return no;
-	}
-	public void setNo(String no) {
-		this.no = no;
-	}
-	public String getSupName() {
-		return supName;
-	}
-	public void setSupName(String supName) {
-		this.supName = supName;
-	}
-	public float getAllMoney() {
-		return allMoney;
-	}
-	public void setAllMoney(float allMoney) {
-		this.allMoney = allMoney;
-	}
-	@Override
-	public String toString() {
-		return "InOrderDesc [inOrderId=" + inOrderId + ", no=" + no
-				+ ", supName=" + supName + ", allMoney=" + allMoney + "]";
-	}
+
 
 	public String getFlag(){
 		if(allMoney>20){
